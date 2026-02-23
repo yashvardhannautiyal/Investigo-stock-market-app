@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MdOutlineDarkMode } from "react-icons/md";
+import ThemeToggle from "./ThemeToggle";
+import { AiOutlineStock } from "react-icons/ai";
 
 function Navbar() {
   return (
-    <div className="container p-3 flex justify-between">
+    <div className="p-3 flex justify-between">
       {/* logo  */}
       <div className="logo">
         <Link to="/" className="flex items-center gap-2 ">
-          <img src="../src/assets/logo.png" alt="" className="w-11" />
+        <AiOutlineStock className="text-5xl font-extrabold" />
           <h1 className="text-4xl font-extrabold text-blue-800">InvestiGo</h1>
         </Link>
       </div>
@@ -26,7 +27,7 @@ function Navbar() {
       </div>
 
       <div className="flex gap-7 items-center">
-        <button className="cursor-pointer"><MdOutlineDarkMode className="text-2xl"/></button>
+          <ThemeToggle />
         <Link to="/login">
           <button className="font-semibold bg-blue-800 px-7 h-8 rounded-sm text-white hover:bg-blue-700 cursor-pointer">
             Log in
