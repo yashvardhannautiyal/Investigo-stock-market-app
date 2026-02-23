@@ -22,7 +22,7 @@ function PublicLayout(){
 }
 function App() {
   return (
-    <div>
+    <div className='bg-linear-to-r from-amber-50 to-blue-100 text-gray-800 h-screen'>
       
       <Routes>
       {/* pages with navbar + footer  */}
