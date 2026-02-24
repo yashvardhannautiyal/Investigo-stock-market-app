@@ -5,7 +5,7 @@ import { AiOutlineStock } from "react-icons/ai";
 
 function Navbar() {
   return (
-    <div className="p-3 w-full flex justify-between fixed top-0 backdrop-blur-sm z-50">
+    <div className="p-3 w-full flex justify-between sticky top-0 backdrop-blur-sm z-50">
       {/* logo  */}
       <div className="logo">
         <Link to="/" className="flex items-center gap-2 ">
