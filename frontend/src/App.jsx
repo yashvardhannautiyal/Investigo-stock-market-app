@@ -17,7 +17,9 @@ function PublicLayout(){
     <>
     <Navbar />
     <Outlet />
+    <hr className='text-blue-300' />
     <OpenAccount />
+    <hr className='text-blue-300' />
     <Footer />
     </>
   )
