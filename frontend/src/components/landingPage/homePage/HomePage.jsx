@@ -1,13 +1,17 @@
 import React from 'react'
 import HeroSection from './HeroSection'
-import Features from "../features/Features"
-import Pricing from "../pricing/Pricing"
+import Organizations from './Organizations'
+import StepsTrading from './StepsTrading'
+import OpenAccount from '../OpenAccount'
+
 function HomePage() {
   return (
    <>
    <HeroSection />
-   <Features />
-   <Pricing />
+   <hr className='text-blue-300' />
+   <Organizations />
+   <hr className='text-blue-300'/>
+   <StepsTrading />
    </>
   )
 }

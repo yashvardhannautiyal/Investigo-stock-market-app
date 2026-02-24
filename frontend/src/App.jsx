@@ -8,6 +8,7 @@ import Footer from './components/landingPage/Footer'
 import LoginPage from './components/user_login/LoginPage'
 import SignUpPage from './components/user_login/SignUpPage'
 import { Outlet } from 'react-router-dom'
+import OpenAccount from './components/landingPage/OpenAccount'
 
 
 //layout for pages with navbar + footer
@@ -16,6 +17,7 @@ function PublicLayout(){
     <>
     <Navbar />
     <Outlet />
+    <OpenAccount />
     <Footer />
     </>
   )
