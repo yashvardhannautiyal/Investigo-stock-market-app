@@ -118,7 +118,7 @@ function Footer() {
 
       <hr className='text-blue-300 mt-4' />
       {/* bottom content  */}
-      <div className="mt-5 mb-5">
+      <div className="py-5">
         <p className="font-medium text-sm text-gray-700 flex items-center gap-1"> <PiCopyrightLight />2026 InvestiGo Inc. All rights reserved.</p>
       </div>
     </div>

@@ -10,29 +10,23 @@ function Navbar() {
       <div className="logo">
         <Link to="/" className="flex items-center gap-2 ">
         <AiOutlineStock className="text-5xl font-extrabold" />
-          <h1 className="text-4xl font-extrabold bg-linear-to-r from-blue-500 to-red-600 bg-clip-text text-transparent">InvestiGo</h1>
+          <h1 className="text-4xl font-extrabold text-blue-800">InvestiGo</h1>
         </Link>
       </div>
 
-      <div className="flex gap-9 items-center font-semibold">
+      <div className="flex gap-7 items-center font-bold">
         <p className="hover:text-blue-700">
           <Link to="/">Home</Link>
         </p>
         <p className="hover:text-blue-700">
           <Link to="/features">Features</Link>
         </p>
-        <p className="hover:text-blue-700">
-          <Link to="/pricing">Pricing</Link>
-        </p>
-      </div>
-
-      <div className="flex gap-7 items-center">
-          <ThemeToggle />
         <Link to="/login">
-          <button className="font-semibold bg-blue-700 px-7 h-8 rounded-xl text-white hover:bg-blue-600 cursor-pointer">
+          <button className="bg-blue-700 px-6 h-8 rounded-xl text-white hover:bg-blue-600 cursor-pointer">
             Log in
           </button>
         </Link>
+          <ThemeToggle />
       </div>
     </div>
   );

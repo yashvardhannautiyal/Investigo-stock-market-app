@@ -1,7 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './components/landingPage/homePage/HomePage'
 import Features from './components/landingPage/features/Features'
-import Pricing from './components/landingPage/pricing/Pricing'
 import NotFound from './components/NotFound'
 import Navbar from './components/landingPage/Navbar'
 import Footer from './components/landingPage/Footer'
@@ -33,7 +32,6 @@ function App() {
       <Route element={<PublicLayout />}>
       <Route path='/' element={<HomePage />} />
         <Route path='/features' element={<Features />} />
-        <Route path='/pricing' element={<Pricing />} />
         <Route path='*' element={<NotFound />} />
         </Route>
 
