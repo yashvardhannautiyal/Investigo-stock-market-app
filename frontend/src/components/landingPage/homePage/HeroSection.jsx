@@ -1,6 +1,7 @@
 import React from 'react'
 import { TbArrowNarrowRight } from "react-icons/tb";
 import { MdElectricBolt } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 function HeroSection() {
   return (
@@ -14,10 +15,12 @@ function HeroSection() {
 
       <p className='w-10/12'>Experience the next generation of trading with professional-grade tools, real-time data, and intelligent analytics designed for modern investors.</p>
 
+    <Link to="/login">
       <button className='mt-5 bg-blue-700 hover:bg-blue-600 text-white px-2 py-2 w-3xs rounded-2xl font-bold text-lg flex items-center gap-3 justify-center cursor-pointer'>
           Start Trading Now
           <TbArrowNarrowRight className='text-2xl font-extrabold'/>
         </button>
+        </Link>
       </div>
 
       {/* image  */}

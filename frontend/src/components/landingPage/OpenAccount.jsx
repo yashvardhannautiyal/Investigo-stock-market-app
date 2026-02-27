@@ -1,5 +1,6 @@
 import React from 'react'
 import { TbArrowNarrowRight } from "react-icons/tb";
+import { Link } from 'react-router-dom';
 
 function OpenAccount() {
   return (
@@ -10,10 +11,15 @@ function OpenAccount() {
       </div>
 
       <div className='flex gap-12 mt-8 mb-14'>
+        <Link to="/login">
         <button className='bg-white py-3 px-12 rounded-2xl font-bold flex items-center justify-center gap-1 text-blue-700 cursor-pointer'>Create Free Account
           <TbArrowNarrowRight className='text-2xl font-bold'/>
         </button>
+        </Link>
+
+        <Link to="/features">
         <button className='py-3 border border-white px-12 rounded-2xl text-white font-bold cursor-pointer'>Learn More</button>
+        </Link>
       </div>
     </div>
   )
