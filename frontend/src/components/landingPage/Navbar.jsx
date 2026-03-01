@@ -22,7 +22,7 @@ function Navbar() {
           <Link to="/features">Features</Link>
         </p>
         <Link to="/login">
-          <button className="bg-blue-700 px-6 h-8 rounded-xl text-white hover:bg-blue-600 cursor-pointer">
+          <button className="bg-blue-800 px-6 h-8 rounded-xl text-white hover:bg-blue-700 cursor-pointer">
             Log in
           </button>
         </Link>

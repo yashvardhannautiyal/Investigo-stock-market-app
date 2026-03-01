@@ -37,7 +37,7 @@ function App() {
 
         {/* pages without navbar/footer  */}
         <Route path='/login' element={<LoginPage />} />
-        <Route path='/sign-up' element={<SignUpPage />} />
+        <Route path='/signup' element={<SignUpPage />} />
         
         </Routes>
         
