@@ -7,7 +7,7 @@ function DashboardNav() {
   return (
     <div>
         {/* navbar  */}
-      <nav className="p-3 w-full flex justify-between sticky top-0 backdrop-blur-sm z-50 bg-white">
+      <nav className="py-3 px-8 w-full flex justify-between sticky top-0 backdrop-blur-sm z-50 bg-white">
         {/* logo  */}
         <div className="logo flex items-center gap-1">
             <AiOutlineStock className="text-4xl font-extrabold" />
