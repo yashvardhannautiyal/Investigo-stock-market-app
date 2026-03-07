@@ -8,6 +8,12 @@ import LoginPage from './components/landingPage/user_login/LoginPage'
 import SignUpPage from './components/landingPage/user_login/SignUpPage'
 import { Outlet } from 'react-router-dom'
 import OpenAccount from './components/landingPage/OpenAccount'
+import DashboardLayout from './components/dashboardPage/DashboardLayout'
+import DashboardHome from './components/dashboardPage/DashboardHome'
+import Portfolio from './components/dashboardPage/portfolio/Portfolio.jsx'
+import Positions from './components/dashboardPage/positions/Positions.jsx'
+import Funds from './components/dashboardPage/funds/Funds.jsx'
+import Watchlist from './components/dashboardPage/watchlist/Watchlist.jsx'
 
 
 //layout for pages with navbar + footer
@@ -39,6 +45,19 @@ function App() {
         <Route path='/login' element={<LoginPage />} />
         <Route path='/signup' element={<SignUpPage />} />
         
+
+        {/* dashboard pages  */}
+        <Route path="/dashboard" element={<DashboardLayout />}>
+        
+        <Route index element={<DashboardHome />} />
+
+        <Route path="portfolio" element={<Portfolio />} />
+
+        <Route path="watchlist" element={<Watchlist />} />
+        <Route path="positions" element={<Positions />} />
+
+        <Route path="funds" element={<Funds />} />
+        </Route>
         </Routes>
         
     </div>

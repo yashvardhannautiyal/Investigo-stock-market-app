@@ -13,14 +13,14 @@ function SignUpPage() {
             <h1 className="text-3xl font-extrabold text-blue-800">InvestiGo</h1>
           </Link>
 
-          <h3 className="text-2xl font-extrabold mt-5">Create an account</h3>
+          <h3 className="text-2xl font-extrabold mt-3">Create an account</h3>
           <p className="mt-2 text-sm text-gray-500">
             Start your journey to InvestiGo today
           </p>
         </div>
 
         {/* form  */}
-        <form className="mt-8 px-6 text-sm font-medium">
+        <form className="mt-4 px-6 text-sm font-medium">
           <p>Full Name</p>
           <input
             type="email"
@@ -42,10 +42,19 @@ function SignUpPage() {
             className="bg-gray-100 border-2 border-gray-300 rounded-xl py-2 px-3 w-full mt-1 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
             placeholder="••••••"
           />
+          <p className="mt-4">Confirm Password</p>
+          <input
+            type="password"
+            name="c-password"
+            className="bg-gray-100 border-2 border-gray-300 rounded-xl py-2 px-3 w-full mt-1 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+            placeholder="••••••"
+          />
+          <Link to="/login">
           <button className="bg-blue-800 text-white w-full mt-4 py-2 rounded-xl font-bold text-lg cursor-pointer hover:bg-blue-700">
             Create Account
           </button>
-          <hr className="mt-6 text-blue-300" />
+          </Link>
+          <hr className="mt-4 text-blue-300" />
         </form>
 
         <p className="text-center mt-3 text-gray-600 text-sm">
