@@ -1,59 +1,77 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import { positions } from "../data/data";
 
 const Positions = () => {
-
   const [allPositions, setAllPositions] = useState([]);
 
-  useEffect(() =>{
-    axios.get("http://localhost:3002/allPositions")
-    .then((res) =>{
-      console.log(res.data);
+  useEffect(() => {
+    axios.get("http://localhost:3002/allPositions").then((res) => {
       setAllPositions(res.data);
-    }); // the backend url server should be running
+    });
   }, []);
 
   return (
-    <>
-      <h3 className="title">Positions ({allPositions.length})</h3>
+    <div className="p-4">
 
-      <div className="order-table">
-        <table>
-          <tr>
-            <th>Product</th>
-            <th>Instrument</th>
-            <th>Qty.</th>
-            <th>Avg.</th>
-            <th>LTP</th>
-            <th>P&L</th>
-            <th>Chg.</th>
-          </tr>
+      {/* Title */}
+      <h3 className="text-lg font-light text-gray-700 mb-4">
+        Positions ({allPositions.length})
+      </h3>
 
-        {allPositions.map((stock, index) => {
-                    const curValue = stock.price * stock.qty;
-                    const isProfit = curValue - stock.avg * stock.qty >= 0.0;
-                    const profClass = isProfit ? "profit" : "loss";
-                    const dayClass = stock.isLoss ? "loss" : "profit";
-        
-                    return (
-                      <tr key={index}>
-                        <td>{stock.product}</td>
-                        <td>{stock.name}</td>
-                        <td>{stock.qty}</td>
-                        <td>{stock.avg.toFixed(2)}</td>
-                        <td>{stock.price.toFixed(2)}</td>
-                        <td className={profClass}>
-                          {(curValue - stock.avg * stock.qty).toFixed(2)}
-                        </td>
-                        <td className={dayClass}>{stock.day}</td>
-                      </tr>
-                    );
-                  })}
+      {/* Table */}
+      <div className="overflow-x-auto border rounded">
+        <table className="w-full border-collapse text-sm">
+          
+          <thead>
+            <tr className="border-b text-gray-500 text-xs">
+              {/* <th className="text-left p-3">Product</th> */}
+              <th className="text-left p-3">Instrument</th>
+              <th className="text-right p-3">Qty.</th>
+              <th className="text-right p-3">Avg.</th>
+              <th className="text-right p-3">LTP</th>
+              <th className="text-right p-3">P&amp;L</th>
+              <th className="text-right p-3">Chg.</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {allPositions.map((stock, index) => {
+              const curValue = stock.price * stock.qty;
+              const profit = curValue - stock.avg * stock.qty;
+              const isProfit = profit >= 0;
+
+              return (
+                <tr key={index} className="border-b">
+                  {/* <td className="text-left p-3">{stock.product}</td> */}
+                  <td className="text-left p-3">{stock.name}</td>
+                  <td className="text-right p-3">{stock.qty}</td>
+                  <td className="text-right p-3">{stock.avg.toFixed(2)}</td>
+                  <td className="text-right p-3">{stock.price.toFixed(2)}</td>
+
+                  <td
+                    className={`text-right p-3 ${
+                      isProfit ? "text-green-500" : "text-red-500"
+                    }`}
+                  >
+                    {profit.toFixed(2)}
+                  </td>
+
+                  <td
+                    className={`text-right p-3 ${
+                      stock.isLoss ? "text-red-500" : "text-green-500"
+                    }`}
+                  >
+                    {stock.day}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
 
         </table>
       </div>
-    </>
+
+    </div>
   );
 };
 

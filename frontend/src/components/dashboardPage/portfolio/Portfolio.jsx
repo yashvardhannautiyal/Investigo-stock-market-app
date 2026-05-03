@@ -1,76 +1,127 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { VerticalGraph } from "./VerticalGraph.jsx";
 
 const Portfolio = () => {
   const [allHoldings, setAllHoldings] = useState([]);
 
   useEffect(() => {
     axios.get("http://localhost:3002/allHoldings").then((res) => {
-      console.log(res.data);
       setAllHoldings(res.data);
-    }); // the backend url server should be running
+    });
   }, []);
 
+  // Graph data
+  const labels = allHoldings.map((item) => item.name);
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: "Stock price",
+        data: allHoldings.map((stock) => stock.price),
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
+      },
+    ],
+  };
+
   return (
-    <>
-      <h3 className="title">Holdings ({allHoldings.length})</h3>
+    <div className="p-4">
 
-      <div className="order-table">
-        <table>
-          <tr>
-            <th>Instrument</th>
-            <th>Qty.</th>
-            <th>Avg. cost</th>
-            <th>LTP</th>
-            <th>Cur. val</th>
-            <th>P&L</th>
-            <th>Net chg.</th>
-            <th>Day chg.</th>
-          </tr>
+      {/* Title */}
+      <h3 className="text-lg font-light text-gray-700 mb-4">
+        Holdings ({allHoldings.length})
+      </h3>
 
-          {allHoldings.map((stock, index) => {
-            const curValue = stock.price * stock.qty;
-            const isProfit = curValue - stock.avg * stock.qty >= 0.0;
-            const profClass = isProfit ? "profit" : "loss";
-            const dayClass = stock.isLoss ? "loss" : "profit";
+      {/* Table */}
+      <div className="overflow-x-auto border rounded">
+        <table className="w-full border-collapse text-sm">
+          <thead>
+            <tr className="border-b text-gray-500 text-xs">
+              <th className="text-left p-3">Instrument</th>
+              <th className="text-right p-3">Qty.</th>
+              <th className="text-right p-3">Avg. cost</th>
+              <th className="text-right p-3">LTP</th>
+              <th className="text-right p-3">Cur. val</th>
+              <th className="text-right p-3">P&L</th>
+              <th className="text-right p-3">Net chg.</th>
+              <th className="text-right p-3">Day chg.</th>
+            </tr>
+          </thead>
 
-            return (
-              <tr key={index}>
-                <td>{stock.name}</td>
-                <td>{stock.qty}</td>
-                <td>{stock.avg.toFixed(2)}</td>
-                <td>{stock.price.toFixed(2)}</td>
-                <td>{curValue.toFixed(2)}</td>
-                <td className={profClass}>
-                  {(curValue - stock.avg * stock.qty).toFixed(2)}
-                </td>
-                <td className={profClass}>{stock.net}</td>
-                <td className={dayClass}>{stock.day}</td>
-              </tr>
-            );
-          })}
+          <tbody>
+            {allHoldings.map((stock, index) => {
+              const curValue = stock.price * stock.qty;
+              const profit = curValue - stock.avg * stock.qty;
+              const isProfit = profit >= 0;
+
+              return (
+                <tr key={index} className="border-b">
+                  <td className="text-left p-3">{stock.name}</td>
+                  <td className="text-right p-3">{stock.qty}</td>
+                  <td className="text-right p-3">{stock.avg.toFixed(2)}</td>
+                  <td className="text-right p-3">{stock.price.toFixed(2)}</td>
+                  <td className="text-right p-3">{curValue.toFixed(2)}</td>
+
+                  <td
+                    className={`text-right p-3 ${
+                      isProfit ? "text-green-500" : "text-red-500"
+                    }`}
+                  >
+                    {profit.toFixed(2)}
+                  </td>
+
+                  <td
+                    className={`text-right p-3 ${
+                      isProfit ? "text-green-500" : "text-red-500"
+                    }`}
+                  >
+                    {stock.net}
+                  </td>
+
+                  <td
+                    className={`text-right p-3 ${
+                      stock.isLoss ? "text-red-500" : "text-green-500"
+                    }`}
+                  >
+                    {stock.day}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
         </table>
       </div>
 
-      <div className="row">
-        <div className="col">
-          <h5>
-            29,875.<span>55</span>{" "}
+      {/* Summary */}
+      <div className="flex justify-between mt-6 text-center">
+        <div>
+          <h5 className="text-xl font-light text-gray-700">
+            29,875.<span className="text-sm">55</span>
           </h5>
-          <p>Total investment</p>
+          <p className="text-xs text-gray-500 mt-1">Total investment</p>
         </div>
-        <div className="col">
-          <h5>
-            31,428.<span>95</span>{" "}
+
+        <div>
+          <h5 className="text-xl font-light text-gray-700">
+            31,428.<span className="text-sm">95</span>
           </h5>
-          <p>Current value</p>
+          <p className="text-xs text-gray-500 mt-1">Current value</p>
         </div>
-        <div className="col">
-          <h5>1,553.40 (+5.20%)</h5>
-          <p>P&L</p>
+
+        <div>
+          <h5 className="text-xl font-light text-green-500">
+            1,553.40 (+5.20%)
+          </h5>
+          <p className="text-xs text-gray-500 mt-1">P&amp;L</p>
         </div>
       </div>
-    </>
+
+      {/* Chart */}
+      <div className="mt-6">
+        <VerticalGraph data={data} />
+      </div>
+    </div>
   );
 };
 
