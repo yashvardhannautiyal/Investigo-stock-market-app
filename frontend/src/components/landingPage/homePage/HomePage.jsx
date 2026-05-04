@@ -8,9 +8,9 @@ function HomePage() {
   return (
    <>
    <HeroSection />
-   <hr className='text-blue-300' />
+   <hr className='text-blue-300 dark:text-gray-700' />
    <Organizations />
-   <hr className='text-blue-300'/>
+   <hr className='text-blue-300 dark:text-gray-700'/>
    <StepsTrading />
    </>
   )

@@ -7,10 +7,10 @@ import { CiMoneyCheck1 } from "react-icons/ci";
 
 function Menu() {
   return (
-    <div className="bg-white min-h-screen w-50 p-6">
+    <div className="bg-white min-h-screen w-60 p-6">
       <h4 className="text-gray-500 text-xs font-bold">MENU</h4>
-      <ul className="space-y-3 mt-4 font-bold text-gray-600">
-        <li className="w-36">
+      <ul className="space-y-3 mt-4 font-bold text-gray-600 flex-col">
+        <li className="w-40">
           <NavLink
             to="/dashboard"
             end
@@ -22,7 +22,7 @@ function Menu() {
             Dashboard
           </NavLink>
         </li>
-        <li className="w-36">
+        <li className="w-40">
           <NavLink
             to="/dashboard/positions"
             className={({ isActive }) =>
@@ -32,7 +32,7 @@ function Menu() {
             <VscGraph /> Positions
           </NavLink>
         </li>
-        <li className="w-36">
+        <li className="w-40">
           <NavLink
             to="/dashboard/funds"
             className={({ isActive }) =>
@@ -42,7 +42,7 @@ function Menu() {
             <IoWalletSharp /> Funds
           </NavLink>
         </li>
-        <li className="w-36">
+        <li className="w-40">
           <NavLink
             to="/dashboard/portfolio"
             className={({ isActive }) =>

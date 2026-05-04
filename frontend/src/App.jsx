@@ -13,7 +13,6 @@ import DashboardHome from './components/dashboardPage/DashboardHome'
 import Portfolio from './components/dashboardPage/portfolio/Portfolio.jsx'
 import Positions from './components/dashboardPage/positions/Positions.jsx'
 import Funds from './components/dashboardPage/funds/Funds.jsx'
-// import Watchlist from './components/dashboardPage/watchlist/Watchlist.jsx'
 
 
 //layout for pages with navbar + footer
@@ -22,16 +21,17 @@ function PublicLayout(){
     <>
     <Navbar />
     <Outlet />
-    <hr className='text-blue-300' />
+    <hr className='text-blue-300 dark:text-gray-700' />
     <OpenAccount />
-    <hr className='text-blue-300' />
+    <hr className='text-blue-300 dark:text-gray-700' />
     <Footer />
     </>
   )
 }
 function App() {
   return (
-    <div className='bg-linear-to-r from-amber-50 to-blue-100 text-gray-800 min-h-screen'>
+    // <div className='bg-linear-to-r from-amber-50 to-blue-100 text-gray-800 min-h-screen dark:bg-gray-900'>
+      <div className="bg-linear-to-r from-amber-50 to-blue-100  text-gray-800 dark:bg-linear-to-r dark:from-gray-950 dark:to-gray-900 dark:text-white">
       
       <Routes>
       {/* pages with navbar + footer  */}

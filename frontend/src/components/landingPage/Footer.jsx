@@ -10,12 +10,12 @@ function Footer() {
   return (
     <div className="px-10">
       {/* top content  */}
-      <div className="flex justify-between mt-18">
+      <div className="flex justify-between mt-16">
         {/* logo + text  */}
         <div className="w-md">
           <a href="/" className="flex items-center gap-2">
             <AiOutlineStock className="text-4xl font-extrabold" />
-            <h1 className="text-3xl font-extrabold bg-linear-to-r from-blue-500 to-red-600 bg-clip-text text-transparent">
+            <h1 className="text-3xl font-extrabold bg-linear-to-r from-blue-500 to-red-600 dark:bg-linear-to-r dark:from-blue-700 dark:to-blue-700 bg-clip-text text-transparent">
               InvestiGo
             </h1>
           </a>
@@ -26,20 +26,20 @@ function Footer() {
           </p>
 
           <div className="flex gap-8 text-2xl mt-4">
-            <a href="https://x.com/home?lang=en-in" target="_blank" className="border-2 bg-gray-200 border-gray-300 p-2 rounded-xl hover:text-blue-700">
+            <a href="https://x.com/home?lang=en-in" target="_blank" className="border-2 bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-700 p-2 rounded-xl hover:text-blue-700 dark:hover:text-blue-500">
               <FaXTwitter />
             </a>
             <a
               href="https://www.linkedin.com/in/yash-vardhan-nautiyal/"
               target="_blank"
-              className="border-2 bg-gray-200 border-gray-300 p-2 rounded-xl hover:text-blue-700"
+              className="border-2 bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-700 p-2 rounded-xl hover:text-blue-700 dark:hover:text-blue-500"
             >
               <IoLogoLinkedin />
             </a>
             <a
               href="https://github.com/yashvardhannautiyal/Investigo-stock-market-app"
               target="_blank"
-              className="border-2 bg-gray-200 border-gray-300 p-2 rounded-xl hover:text-blue-700"
+              className="border-2 bg-gray-200 border-gray-300 dark:bg-gray-800 dark:border-gray-700 p-2 rounded-xl hover:text-blue-700 dark:hover:text-blue-500"
             >
               <FaGithub />
             </a>
@@ -51,7 +51,7 @@ function Footer() {
           {/* list 1  */}
           <div>
             <h4 className="text-lg font-extrabold">Product</h4>
-            <ul className="text-gray-700 font-medium mt-5 space-y-3">
+            <ul className="text-gray-700 dark:text-gray-400 font-medium mt-5 space-y-3">
               <li>Features</li>
               <li>Pricing</li>
               <li>Mobile App</li>
@@ -64,7 +64,7 @@ function Footer() {
           {/* list 2  */}
           <div>
             <h4 className="text-lg font-extrabold">Company</h4>
-            <ul className="text-gray-700 font-medium mt-5 space-y-3">
+            <ul className="text-gray-700 dark:text-gray-400 font-medium mt-5 space-y-3">
               <li>About Us</li>
               <li>Careers</li>
               <li>Blog</li>
@@ -77,7 +77,7 @@ function Footer() {
           {/* list 1  */}
           <div>
             <h4 className="text-lg font-extrabold">Resources</h4>
-            <ul className="text-gray-700 font-medium mt-5 space-y-3">
+            <ul className="text-gray-700 dark:text-gray-400 font-medium mt-5 space-y-3">
               <li>Help Center</li>
               <li>Contact Us</li>
               <li>Trading Academy</li>
@@ -91,7 +91,7 @@ function Footer() {
         <div></div>
       </div>
 
-      <hr className='text-blue-300 mt-4' />
+      <hr className='text-blue-300 dark:text-gray-700 mt-12' />
       {/* between  content */}
       <div className="flex items-center mb-10 mt-10 gap-40">
         <div>
@@ -116,10 +116,10 @@ function Footer() {
         <div></div>
       </div>
 
-      <hr className='text-blue-300 mt-4' />
+      <hr className='text-blue-300 dark:text-gray-700 mt-4' />
       {/* bottom content  */}
       <div className="py-5">
-        <p className="font-medium text-sm text-gray-700 flex items-center gap-1"> <PiCopyrightLight />2026 InvestiGo Inc. All rights reserved.</p>
+        <p className="font-medium text-sm text-gray-700 dark:text-gray-100 flex items-center gap-1"> <PiCopyrightLight />2026 InvestiGo Inc. All rights reserved.</p>
       </div>
     </div>
   );

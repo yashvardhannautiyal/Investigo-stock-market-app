@@ -3,7 +3,7 @@ import { GeneralContextProvider } from "./GeneralContext";
 import Summary from "./Summary";
 function DashboardHome() {
   return (
-    <div className="flex">
+    <div>
       <GeneralContextProvider>
         <WatchList />
       </GeneralContextProvider>

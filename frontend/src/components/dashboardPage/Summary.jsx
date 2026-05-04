@@ -2,14 +2,14 @@ import React from "react";
 
 const Summary = () => {
   return (
-    <div className="h-full min-h-screen flex flex-col justify-between p-8 text-gray-700 bg-white">
+    <div className="flex flex-col justify-between p-8 text-gray-700 bg-white rounded-2xl">
 
       {/* TOP */}
       <div>
         {/* Header */}
         <div className="mb-10">
           <h6 className="text-sm text-gray-500 mb-4">Hi, User!</h6>
-          <div className="border-b"></div>
+          <div className="border-b  border-gray-300"></div>
         </div>
 
         {/* -------- Equity Section -------- */}
@@ -25,8 +25,7 @@ const Summary = () => {
               <p className="text-sm text-gray-400 mt-3">Margin available</p>
             </div>
 
-            {/* Divider */}
-            <div className="h-16 w-px bg-gray-200 mx-10"></div>
+            
 
             {/* Right */}
             <div className="text-sm text-gray-500 space-y-3">
@@ -40,11 +39,11 @@ const Summary = () => {
             </div>
           </div>
 
-          <div className="border-b mt-10"></div>
+          <div className="border-b border-gray-300 mt-10"></div>
         </div>
 
         {/* -------- Holdings Section -------- */}
-        <div>
+        <div className="mb-8">
 
           <p className="text-xs text-gray-500 mb-8">Holdings (13)</p>
 
@@ -58,8 +57,7 @@ const Summary = () => {
               <p className="text-sm text-gray-400 mt-3">P&amp;L</p>
             </div>
 
-            {/* Divider */}
-            <div className="h-16 w-px bg-gray-200 mx-10"></div>
+          
 
             {/* Right */}
             <div className="text-sm text-gray-500 space-y-3">
@@ -74,12 +72,10 @@ const Summary = () => {
             </div>
           </div>
 
-          <div className="border-b mt-10"></div>
         </div>
       </div>
 
-      {/* BOTTOM SPACING (optional footer feel) */}
-      <div className="h-10"></div>
+      
     </div>
   );
 };

@@ -9,10 +9,12 @@ function DashboardNav() {
         {/* navbar  */}
       <nav className="py-3 px-8 w-full flex justify-between sticky top-0 backdrop-blur-sm z-50 bg-white">
         {/* logo  */}
-        <div className="logo flex items-center gap-1">
+        <Link to="/">
+        <div className="logo flex items-center gap-1">          
             <AiOutlineStock className="text-4xl font-extrabold" />
             <h1 className="text-2xl font-extrabold text-blue-800">InvestiGo</h1>
         </div>
+        </Link>
 
         <ThemeToggle />
       </nav>

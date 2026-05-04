@@ -29,35 +29,40 @@ const WatchList = () => {
           "rgba(153, 102, 255, 0.7)",
           "rgba(255, 159, 64, 0.7)",
         ],
-        borderWidth: 3,
+        borderWidth: 2,
       },
     ],
   };
 
   return (
-    <div className="w-[32%] h-full shadow-md overflow-y-auto relative bg-white">
-      <TopBar />
+    <div className="flex pb-10">
+      <div className="w-[60%] shadow-sm overflow-y-auto relative bg-white rounded-2xl border-2 border-gray-100">
+        <TopBar />
 
-      {/* Search */}
-      <div className="relative flex items-center">
-        <input
-          type="text"
-          placeholder="Search eg: infy, bse, nifty..."
-          className="w-full p-4 text-sm border-b outline-none"
-        />
-        <span className="absolute right-4 text-gray-400 text-sm">
-          {watchlist.length} / 50
-        </span>
+        {/* Search */}
+        <div className="relative flex items-center">
+          <input
+            type="text"
+            placeholder="Search eg: infy, bse, nifty..."
+            className="w-full p-2 text-sm border-b border-gray-300 outline-none shadow-sm"
+          />
+          <span className="absolute right-4 text-gray-400 text-sm">
+            {watchlist.length} / 50
+          </span>
+        </div>
+
+        {/* List */}
+        <ul>
+          {watchlist.map((stock, index) => (
+            <WatchListItem stock={stock} key={index} />
+          ))}
+        </ul>
       </div>
 
-      {/* List */}
-      <ul className="pb-20">
-        {watchlist.map((stock, index) => (
-          <WatchListItem stock={stock} key={index} />
-        ))}
-      </ul>
-
+      {/* chart  */}
+      <div className="w-[40%]">
       <DoughnutChart data={data} />
+      </div>
     </div>
   );
 };
@@ -71,7 +76,7 @@ const WatchListItem = ({ stock }) => {
 
   return (
     <li
-      className="relative border-b px-3 py-3 hover:bg-gray-100 cursor-pointer"
+      className="relative border-b border-gray-200 px-3 py-2 cursor-pointer"
       onMouseEnter={() => setShowAction(true)}
       onMouseLeave={() => setShowAction(false)}
     >
@@ -111,27 +116,40 @@ const WatchListActions = ({ uid }) => {
     <span className="absolute inset-0 flex items-center justify-end gap-2 pr-3 bg-white/80">
       <Tooltip title="Buy (B)" placement="top" arrow TransitionComponent={Grow}>
         <button
-          onClick={handleBuyClick}
+          onClick={() => generalContext.openBuyWindow(uid)}
           className="bg-blue-500 text-white px-3 py-1 text-xs rounded hover:bg-blue-400"
         >
           Buy
         </button>
       </Tooltip>
 
-      <Tooltip title="Sell (S)" placement="top" arrow TransitionComponent={Grow}>
-        <button className="bg-red-500 text-white px-3 py-1 text-xs rounded hover:bg-red-400">
+      <Tooltip
+        title="Sell (S)"
+        placement="top"
+        arrow
+        TransitionComponent={Grow}
+      >
+        <button
+          onClick={() => generalContext.openSellWindow(uid)}
+          className="bg-red-500 text-white px-3 py-1 text-xs rounded hover:bg-red-400"
+        >
           Sell
         </button>
       </Tooltip>
 
-      <Tooltip title="Analytics (A)" placement="top" arrow TransitionComponent={Grow}>
-        <button className="border px-2 py-1 rounded hover:bg-gray-200">
+      <Tooltip
+        title="Analytics (A)"
+        placement="top"
+        arrow
+        TransitionComponent={Grow}
+      >
+        <button className="border px-2 py-1 rounded hover:bg-gray-100">
           <BarChartOutlined className="text-sm" />
         </button>
       </Tooltip>
 
       <Tooltip title="More" placement="top" arrow TransitionComponent={Grow}>
-        <button className="border px-2 py-1 rounded hover:bg-gray-200">
+        <button className="border px-2 py-1 rounded hover:bg-gray-100">
           <MoreHoriz className="text-sm" />
         </button>
       </Tooltip>

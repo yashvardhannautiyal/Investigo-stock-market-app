@@ -8,9 +8,9 @@ function HeroSection() {
     <div className='flex px-24 justify-between items-center h-screen'>
       {/* text  */}
       <div>
-        <p className='mb-8 border w-56 flex items-center justify-center rounded-2xl text-xs border-blue-700 text-blue-800 backdrop-blur-md gap-2 font-semibold'> <MdElectricBolt /> REAL TIME TRADING APP</p>
+        <p className='mb-8 border w-56 flex items-center justify-center rounded-2xl text-xs border-blue-700 text-blue-800 dark:border-blue-500 dark:text-blue-600 backdrop-blur-md gap-2 font-semibold'> <MdElectricBolt /> REAL TIME TRADING APP</p>
 
-      <h1 className='text-7xl font-extrabold text-gray-800'>Master the</h1>
+      <h1 className='text-7xl font-extrabold text-gray-800 dark:text-white'>Master the</h1>
       <h1 className='text-7xl font-extrabold bg-linear-to-r from-blue-500 to-red-500 bg-clip-text text-transparent'>Global Markets</h1>
 
       <p className='w-10/12'>Experience the next generation of trading with professional-grade tools, real-time data, and intelligent analytics designed for modern investors.</p>

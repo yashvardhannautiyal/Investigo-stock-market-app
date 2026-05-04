@@ -14,16 +14,16 @@ const Positions = () => {
     <div className="p-4">
 
       {/* Title */}
-      <h3 className="text-lg font-light text-gray-700 mb-4">
+      <h3 className="text-lg font-extrabold text-gray-700 mb-4">
         Positions ({allPositions.length})
       </h3>
 
       {/* Table */}
-      <div className="overflow-x-auto border rounded">
+      <div className="overflow-x-auto">
         <table className="w-full border-collapse text-sm">
           
           <thead>
-            <tr className="border-b text-gray-500 text-xs">
+            <tr className="border-b border-gray-300  text-gray-500 font-bold">
               {/* <th className="text-left p-3">Product</th> */}
               <th className="text-left p-3">Instrument</th>
               <th className="text-right p-3">Qty.</th>
@@ -41,7 +41,7 @@ const Positions = () => {
               const isProfit = profit >= 0;
 
               return (
-                <tr key={index} className="border-b">
+                <tr key={index} className="border-b border-gray-300">
                   {/* <td className="text-left p-3">{stock.product}</td> */}
                   <td className="text-left p-3">{stock.name}</td>
                   <td className="text-right p-3">{stock.qty}</td>
