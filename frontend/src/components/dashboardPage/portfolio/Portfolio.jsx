@@ -29,7 +29,7 @@ const Portfolio = () => {
     <div className="p-4">
 
       {/* Title */}
-      <h3 className="text-lg font-extrabold text-gray-700 mb-4">
+      <h3 className="text-lg font-extrabold text-gray-700 dark:text-gray-300 mb-4">
         Holdings ({allHoldings.length})
       </h3>
 
@@ -37,7 +37,7 @@ const Portfolio = () => {
       <div className="overflow-x-auto">
         <table className="w-full border-collapse text-sm">
           <thead>
-            <tr className="border-b border-gray-300 text-gray-500 text-xs">
+            <tr className="border-b border-gray-400 dark:border-gray-500 text-gray-500 dark:text-gray-400 text-xs">
               <th className="text-left p-3">Instrument</th>
               <th className="text-right p-3">Qty.</th>
               <th className="text-right p-3">Avg. cost</th>
@@ -56,7 +56,7 @@ const Portfolio = () => {
               const isProfit = profit >= 0;
 
               return (
-                <tr key={index} className="border-b border-gray-300 font-mono">
+                <tr key={index} className="border-b border-gray-300 dark:border-gray-700 dark:broder-gray-700 font-mono">
                   <td className="text-left p-3">{stock.name}</td>
                   <td className="text-right p-3">{stock.qty}</td>
                   <td className="text-right p-3">{stock.avg.toFixed(2)}</td>
@@ -65,7 +65,7 @@ const Portfolio = () => {
 
                   <td
                     className={`text-right p-3 ${
-                      isProfit ? "text-green-500" : "text-red-500"
+                      isProfit ? "text-green-500 dark:text-green-400" : "text-red-500 dark:text-red-400"
                     }`}
                   >
                     {profit.toFixed(2)}
@@ -73,7 +73,7 @@ const Portfolio = () => {
 
                   <td
                     className={`text-right p-3 ${
-                      isProfit ? "text-green-500" : "text-red-500"
+                      isProfit ? "text-green-500 dark:text-green-400" : "text-red-500 dark:text-red-400"
                     }`}
                   >
                     {stock.net}
@@ -81,7 +81,7 @@ const Portfolio = () => {
 
                   <td
                     className={`text-right p-3 ${
-                      stock.isLoss ? "text-red-500" : "text-green-500"
+                      stock.isLoss ? "text-red-500 dark:text-red-400" : "text-green-500 dark:text-green-400"
                     }`}
                   >
                     {stock.day}
@@ -96,21 +96,21 @@ const Portfolio = () => {
       {/* Summary */}
       <div className="flex justify-between mt-6 text-center font-bold">
         <div>
-          <h5 className="text-xl text-gray-700 font-semibold">
+          <h5 className="text-xl text-gray-700 dark:text-gray-400 font-semibold">
             29,875.<span className="text-sm">55</span>
           </h5>
           <p className="text-xs text-gray-500 mt-1">Total investment</p>
         </div>
 
         <div>
-          <h5 className="text-xl font-semibold text-gray-700">
+          <h5 className="text-xl font-semibold text-gray-700 dark:text-gray-400">
             31,428.<span className="text-sm">95</span>
           </h5>
           <p className="text-xs text-gray-500 mt-1">Current value</p>
         </div>
 
         <div>
-          <h5 className="text-xl font-semibold text-green-500">
+          <h5 className="text-xl font-semibold text-green-500 dark:text-green-400">
             1,553.40 (+5.20%)
           </h5>
           <p className="text-xs text-gray-500 mt-1">P&amp;L</p>

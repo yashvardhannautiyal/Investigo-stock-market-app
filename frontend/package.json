@@ -14,7 +14,6 @@
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.3.10",
     "@mui/material": "^7.3.9",
-    "@tailwindcss/postcss": "^4.2.1",
     "@tailwindcss/vite": "^4.2.4",
     "axios": "^1.15.2",
     "chart.js": "^4.5.1",

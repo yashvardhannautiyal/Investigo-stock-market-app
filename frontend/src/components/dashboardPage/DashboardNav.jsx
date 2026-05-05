@@ -7,7 +7,7 @@ function DashboardNav() {
   return (
     <div>
         {/* navbar  */}
-      <nav className="py-3 px-8 w-full flex justify-between sticky top-0 backdrop-blur-sm z-50 bg-white">
+      <nav className="py-3 px-8 w-full flex justify-between sticky top-0 backdrop-blur-sm z-50 bg-white dark:bg-gray-950">
         {/* logo  */}
         <Link to="/">
         <div className="logo flex items-center gap-1">          
@@ -18,7 +18,7 @@ function DashboardNav() {
 
         <ThemeToggle />
       </nav>
-      <hr className="text-gray-300"/>
+      <hr className="text-gray-300 dark:text-gray-700"/>
     </div>
   )
 }

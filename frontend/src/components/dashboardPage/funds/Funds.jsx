@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 const Funds = () => {
   return (
-    <div className="px-3">
+    <div className="px-3 text-black dark:text-gray-400">
 
       {/* Top Actions */}
       <div className="flex justify-end items-center gap-3 mb-4">
-        <p className="text-xs text-gray-400">
+        <p className="text-xs text-gray-600 dark:text-gray-400">
           Instant, zero-cost fund transfers with UPI
         </p>
 
@@ -26,7 +26,7 @@ const Funds = () => {
         {/* LEFT - Equity */}
         <div className="w-2/3">
 
-          <p className="text-lg font-extrabold text-gray-700 mb-3">
+          <p className="text-lg font-extrabold text-gray-700 dark:text-gray-300 mb-3">
             Equity
           </p>
 
@@ -34,20 +34,20 @@ const Funds = () => {
 
             <div className="flex justify-between">
               <p className="text-gray-500 text-sm">Available margin</p>
-              <p className="text-blue-500 text-lg font-medium">4,043.10</p>
+              <p className="text-blue-500 dark:text-blue-400 text-lg font-medium">4,043.10</p>
             </div>
 
             <div className="flex justify-between">
               <p className="text-gray-500 text-sm">Used margin</p>
-              <p className="text-gray-700 text-lg">3,757.30</p>
+              <p className="text-gray-700 dark:text-gray-400 text-lg">3,757.30</p>
             </div>
 
             <div className="flex justify-between">
               <p className="text-gray-500 text-sm">Available cash</p>
-              <p className="text-gray-700 text-lg">4,043.10</p>
+              <p className="text-gray-700 dark:text-gray-400 text-lg">4,043.10</p>
             </div>
 
-            <hr className="text-gray-400"/>
+            <hr className="text-gray-400 dark:text-gray-600"/>
 
             <div className="flex justify-between">
               <p className="text-gray-500 text-sm">Opening Balance</p>
@@ -101,8 +101,8 @@ const Funds = () => {
             </div>
 
             <div className="flex justify-between font-medium">
-              <p>Total Collateral</p>
-              <p>0.00</p>
+              <p className="text-black dark:text-gray-200">Total Collateral</p>
+              <p className="text-black dark:text-gray-200">0.00</p>
             </div>
           </div>
         </div>
@@ -110,7 +110,7 @@ const Funds = () => {
         {/* RIGHT - Commodity */}
         <div className="w-1/3 flex items-center justify-center  p-6 text-center">
           <div>
-            <p className="text-gray-400 mb-4">
+            <p className="text-gray-600 dark:text-gray-400 mb-4">
               You don't have a commodity account
             </p>
 

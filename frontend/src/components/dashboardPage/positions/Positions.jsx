@@ -11,10 +11,10 @@ const Positions = () => {
   }, []);
 
   return (
-    <div className="p-4">
+    <div className="p-4 text-gray-900 dark:text-gray-400">
 
       {/* Title */}
-      <h3 className="text-lg font-extrabold text-gray-700 mb-4">
+      <h3 className="text-lg font-extrabold text-gray-700 dark:text-gray-300 mb-4">
         Positions ({allPositions.length})
       </h3>
 
@@ -23,7 +23,7 @@ const Positions = () => {
         <table className="w-full border-collapse text-sm">
           
           <thead>
-            <tr className="border-b border-gray-300  text-gray-500 font-bold">
+            <tr className="border-b border-gray-300 dark:border-gray-400 text-gray-500 dark:text-gray-400 font-bold">
               {/* <th className="text-left p-3">Product</th> */}
               <th className="text-left p-3">Instrument</th>
               <th className="text-right p-3">Qty.</th>
@@ -41,7 +41,7 @@ const Positions = () => {
               const isProfit = profit >= 0;
 
               return (
-                <tr key={index} className="border-b border-gray-300">
+                <tr key={index} className="border-b border-gray-300 dark:border-gray-700">
                   {/* <td className="text-left p-3">{stock.product}</td> */}
                   <td className="text-left p-3">{stock.name}</td>
                   <td className="text-right p-3">{stock.qty}</td>
@@ -50,7 +50,7 @@ const Positions = () => {
 
                   <td
                     className={`text-right p-3 ${
-                      isProfit ? "text-green-500" : "text-red-500"
+                      isProfit ? "text-green-500 dark:text-green-400" : "text-red-500 dark:text-red-500"
                     }`}
                   >
                     {profit.toFixed(2)}
@@ -58,7 +58,7 @@ const Positions = () => {
 
                   <td
                     className={`text-right p-3 ${
-                      stock.isLoss ? "text-red-500" : "text-green-500"
+                      stock.isLoss ? "text-green-500 dark:text-green-400" : "text-red-500 dark:text-red-500"
                     }`}
                   >
                     {stock.day}
