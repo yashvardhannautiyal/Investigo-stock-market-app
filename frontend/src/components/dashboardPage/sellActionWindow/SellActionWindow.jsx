@@ -23,14 +23,15 @@ const SellActionWindow = ({ uid }) => {
   };
 
   return (
-    <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-[40%] h-[60%] bg-gray-100 border rounded shadow-lg z-50 flex flex-col">
+    <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-[40%] h-[60%] bg-gray-100 dark:bg-gray-800 border
+    dark:border-gray-500 rounded shadow-lg z-50 flex flex-col">
 
       {/* Body */}
-      <div className="p-6 bg-white flex-1">
+      <div className="p-6 bg-white dark:bg-gray-800 flex-1">
         <div className="flex gap-4 mb-6">
 
-          <div className="border rounded px-3 py-2 `w-[120px]`">
-            <label className="text-xs text-gray-500">Qty.</label>
+          <div className="border dark:border-gray-500 rounded px-3 py-2 `w-[120px]`">
+            <label className="text-xs text-gray-500 dark:text-gray-200">Qty.</label>
             <input
               type="number"
               className="w-full outline-none text-lg"
@@ -39,8 +40,8 @@ const SellActionWindow = ({ uid }) => {
             />
           </div>
 
-          <div className="border rounded px-3 py-2 `w-[120px]`">
-            <label className="text-xs text-gray-500">Price</label>
+          <div className="border dark:border-gray-500 rounded px-3 py-2 `w-[120px]`">
+            <label className="text-xs text-gray-500 dark:text-gray-200">Price</label>
             <input
               type="number"
               step="0.05"
@@ -54,8 +55,8 @@ const SellActionWindow = ({ uid }) => {
       </div>
 
       {/* Footer */}
-      <div className="flex justify-between items-center px-6 py-4 border-t bg-gray-50">
-        <span className="text-sm text-gray-500">
+      <div className="flex justify-between items-center px-6 py-4 dark:bg-gray-900 border-t dark:border-gray-500 bg-gray-50">
+        <span className="text-sm text-gray-500 dark:text-gray-200">
           Margin required ₹140.65
         </span>
 

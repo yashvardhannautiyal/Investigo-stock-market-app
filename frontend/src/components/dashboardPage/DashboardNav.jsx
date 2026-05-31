@@ -16,7 +16,7 @@ function DashboardNav({ user, setUser }) {
             <h1 className="text-2xl font-extrabold text-blue-800">InvestiGo</h1>
           </div>
         </Link>
-        <div className="flex items-center gap-7">
+        <div className="flex items-center gap-5">
           <p>
             {user ? (
               <div className="flex items-center gap-1 font-bold text-md">
