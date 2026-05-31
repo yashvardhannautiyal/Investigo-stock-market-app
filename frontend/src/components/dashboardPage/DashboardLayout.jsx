@@ -2,11 +2,11 @@ import { Outlet } from "react-router-dom";
 import DashboardNav from "./DashboardNav";
 import Menu from "./Menu";
 
-function DashboardLayout() {
+function DashboardLayout({user, setUser}) {
   return (
     <div>
       {/* dashboard nav  */}
-      <DashboardNav />
+      <DashboardNav user={user} setUser={setUser}/>
 
       {/* main dashboard area  */}
       <div className="flex flex-1">
