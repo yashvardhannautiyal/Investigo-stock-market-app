@@ -10,7 +10,7 @@ function HeroSection() {
       {/* text  */}
       <div className='flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:w-1/2'>
         
-        <p className='flex items-center gap-2 text-blue-800 border px-7 lg:px-12 rounded-full text-xs lg:text-xl font-bold sm:text-base'>
+        <p className='flex items-center gap-2 text-blue-800 border px-7 lg:px-12 rounded-full text-xs lg:text-md font-bold sm:text-base'>
           <MdElectricBolt className="lg:text-xl" />
           REAL TIME TRADING APP
         </p>
