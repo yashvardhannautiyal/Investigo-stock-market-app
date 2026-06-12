@@ -78,7 +78,7 @@ function Navbar({ user, setUser }) {
 
       {/* mobile menu */}
       {menuOpen && (
-        <div className="absolute top-20 left-0 w-full bg-blue-50 dark:bg-gray-950 flex flex-col items-center gap-6 py-6 font-bold shadow-lg md:hidden">
+        <div className="absolute top-15 left-0 w-full bg-blue-50 dark:bg-gray-900 backdrop-blur-md flex flex-col items-center gap-6 py-6 font-bold shadow-lg md:hidden">
           
           <Link
             to="/"

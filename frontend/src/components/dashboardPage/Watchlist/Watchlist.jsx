@@ -35,8 +35,10 @@ const WatchList = () => {
   };
 
   return (
-    <div className="flex pb-10">
-      <div className="w-[60%] shadow-sm overflow-y-auto relative bg-white dark:bg-gray-900 rounded-2xl border-2 border-gray-100 dark:border-gray-700">
+    <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 w-full">
+      
+      {/* Watchlist */}
+      <div className="w-full lg:w-[60%] dark:bg-gray-950 bg-white rounded-2xl">
         <TopBar />
 
         {/* Search */}
@@ -46,7 +48,8 @@ const WatchList = () => {
             placeholder="Search eg: infy, bse, nifty..."
             className="w-full p-2 text-sm border-b border-gray-300 dark:border-gray-700 outline-none shadow-sm"
           />
-          <span className="absolute right-4 text-gray-400 dark:text-gray-300 text-sm">
+
+          <span className="absolute right-4 text-gray-400 dark:text-gray-300 text-xs sm:text-sm">
             {watchlist.length} / 50
           </span>
         </div>
@@ -59,9 +62,11 @@ const WatchList = () => {
         </ul>
       </div>
 
-      {/* chart  */}
-      <div className="w-[40%]">
-      <DoughnutChart data={data} />
+      {/* Chart */}
+      <div className="w-full lg:w-[40%] flex justify-center items-start">
+        <div className="w-full max-w-xs sm:max-w-sm md:max-w-md">
+          <DoughnutChart data={data} />
+        </div>
       </div>
     </div>
   );
@@ -76,25 +81,36 @@ const WatchListItem = ({ stock }) => {
 
   return (
     <li
-      className="relative border-b border-gray-200 dark:border-gray-700 px-3 py-2 cursor-pointer"
+      className="relative border-b border-gray-200 dark:border-gray-700 px-3 py-3 cursor-pointer"
       onMouseEnter={() => setShowAction(true)}
       onMouseLeave={() => setShowAction(false)}
     >
-      <div className="flex justify-between items-center text-sm font-light">
-        <p className={stock.isDown ? "text-red-500 dark:text-red-400" : "text-green-500 dark:text-green-400"}>
+      <div className="flex justify-between items-center gap-3">
+        
+        <p
+          className={`text-sm sm:text-base ${
+            stock.isDown
+              ? "text-red-500 dark:text-red-400"
+              : "text-green-500 dark:text-green-400"
+          }`}
+        >
           {stock.name}
         </p>
 
-        <div className="flex items-center gap-2">
-          <span className="text-gray-500 dark:text-gray-400">{stock.percent}</span>
+        <div className="flex items-center gap-1 sm:gap-2">
+          <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+            {stock.percent}
+          </span>
 
           {stock.isDown ? (
-            <KeyboardArrowDown className="text-red-500 dark:text-red-400" />
+            <KeyboardArrowDown className="text-red-500 dark:text-red-400 text-sm sm:text-base" />
           ) : (
-            <KeyboardArrowUp className="text-green-500 dark:text-green-400" />
+            <KeyboardArrowUp className="text-green-500 dark:text-green-400 text-sm sm:text-base" />
           )}
 
-          <span className="text-gray-700 dark:text-gray-300">{stock.price}</span>
+          <span className="text-xs sm:text-sm text-gray-700 dark:text-gray-300">
+            {stock.price}
+          </span>
         </div>
       </div>
 
@@ -108,20 +124,15 @@ const WatchListItem = ({ stock }) => {
 const WatchListActions = ({ uid }) => {
   const generalContext = useContext(GeneralContext);
 
-  const handleBuyClick = () => {
-    generalContext.openBuyWindow(uid);
-  };
-
   return (
-    <span className="absolute inset-0 flex items-center justify-end gap-2 pr-3 bg-white/80 dark:bg-gray-300">
-      <Tooltip title="Buy (B)" placement="top" arrow TransitionComponent={Grow}>
-        <button
-          onClick={() => generalContext.openBuyWindow(uid)}
-          className="bg-blue-500 text-white px-3 py-1 text-xs rounded hover:bg-blue-400"
-        >
-          Buy
-        </button>
-      </Tooltip>
+    <span className="flex flex-wrap gap-2 mt-3 sm:absolute sm:right-3 sm:top-2 sm:mt-0 bg-white/80 dark:bg-gray-300 rounded-sm py-1 px-2">
+      
+      <button
+        onClick={() => generalContext.openBuyWindow(uid)}
+        className="bg-blue-500 text-white px-3 py-1 text-xs rounded hover:bg-blue-400"
+      >
+        Buy
+      </button>
 
       <Tooltip
         title="Sell (S)"
@@ -143,13 +154,18 @@ const WatchListActions = ({ uid }) => {
         arrow
         TransitionComponent={Grow}
       >
-        <button className="border px-2 py-1 rounded hover:bg-gray-100">
+        <button className="border px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800">
           <BarChartOutlined className="text-sm" />
         </button>
       </Tooltip>
 
-      <Tooltip title="More" placement="top" arrow TransitionComponent={Grow}>
-        <button className="border px-2 py-1 rounded hover:bg-gray-100">
+      <Tooltip
+        title="More"
+        placement="top"
+        arrow
+        TransitionComponent={Grow}
+      >
+        <button className="border px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800">
           <MoreHoriz className="text-sm" />
         </button>
       </Tooltip>
