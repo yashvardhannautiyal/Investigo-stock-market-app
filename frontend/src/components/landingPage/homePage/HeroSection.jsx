@@ -2,6 +2,7 @@ import React from 'react'
 import { TbArrowNarrowRight } from "react-icons/tb";
 import { MdElectricBolt } from "react-icons/md";
 import { Link } from 'react-router-dom';
+import heroImage from "../../../assets/heroSectionImg.jpg";
 
 function HeroSection() {
   return (
@@ -38,7 +39,7 @@ function HeroSection() {
       {/* image  */}
       <div className='w-full lg:w-1/2 flex justify-center'>
         <img
-          src="../src/assets/heroSectionImg.jpg"
+          src={heroImage}
           alt=""
           className='w-full max-w-xs sm:max-w-md lg:max-w-xl rounded-lg'
         />
