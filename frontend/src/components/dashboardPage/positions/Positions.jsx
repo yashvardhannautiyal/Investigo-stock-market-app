@@ -6,7 +6,7 @@ const Positions = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/allPositions")
+      .get("https://investigo-backend.onrender.com/allPositions")
       .then((res) => {
         setAllPositions(res.data);
       });

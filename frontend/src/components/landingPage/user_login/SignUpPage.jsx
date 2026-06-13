@@ -25,7 +25,7 @@ function SignUpPage({ setUser }) {
     e.preventDefault();
 
     try {
-      const res = await axios.post("/api/users/signup", formData);
+      const res = await axios.post("https://investigo-backend.onrender.com/api/users/signup", formData);
 
       localStorage.setItem("token", res.data.token);
 

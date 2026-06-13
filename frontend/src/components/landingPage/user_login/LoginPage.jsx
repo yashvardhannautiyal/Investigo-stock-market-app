@@ -23,7 +23,7 @@ function LoginPage({ setUser }) {
     e.preventDefault();
 
     try {
-      const res = await axios.post("/api/users/login", formData);
+      const res = await axios.post("https://investigo-backend.onrender.com/api/users/login", formData);
 
       localStorage.setItem("token", res.data.token);
 

@@ -1,4 +1,4 @@
-import WatchList from "./watchlist/Watchlist";
+import WatchList from "./Watchlist/Watchlist";
 import { GeneralContextProvider } from "./GeneralContext";
 import Summary from "./Summary";
 function DashboardHome() {

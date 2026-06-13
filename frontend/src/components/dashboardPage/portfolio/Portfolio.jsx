@@ -7,7 +7,7 @@ const Portfolio = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/allHoldings")
+      .get("https://investigo-backend.onrender.com/allHoldings")
       .then((res) => {
         setAllHoldings(res.data);
       });

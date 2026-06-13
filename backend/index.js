@@ -23,7 +23,7 @@ const PORT = process.env.PORT || 3002;
 app.use("/api/users", authRoutes)
 // app.use("/api/users/signup")
 // app.use("/api/users/login")
-// app.use(express.json());
+app.use(express.json());
 
 app.get("/allHoldings", async (req, res) => {
   let allHoldings = await HoldingsModel.find({}); //empty { } means it will fetch everything from holdingsModel
