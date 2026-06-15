@@ -32,7 +32,7 @@ function PublicLayout({user, setUser}) {
 function App() {
   const [user, setUser] = useState(null);
   const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
   console.log(user);
   useEffect(() => {
@@ -49,18 +49,18 @@ function App() {
           localStorage.removeItem("token");
         }
       }
-      setIsLoading(false);
+      // setIsLoading(false);
     };
     fetchUser();
   }, []);
 
-  if(isLoading){
-    return(
-      <div className="min-h-screen bg-gray-800 flex items-center justify-center">
-        <div className="text-white">Loading...</div>
-      </div>
-    )
-  }
+  // if(isLoading){
+  //   return(
+  //     <div className="min-h-screen bg-gray-800 flex items-center justify-center">
+  //       <div className="text-white">Loading...</div>
+  //     </div>
+  //   )
+  // }
   return (
     // <div className='bg-linear-to-r from-amber-50 to-blue-100 text-gray-800 min-h-screen dark:bg-gray-900'>
     <div className="bg-linear-to-r from-amber-50 to-blue-100  text-gray-800 dark:bg-linear-to-r dark:from-gray-950 dark:to-gray-900 dark:text-white min-h-screen">
